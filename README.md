@@ -97,6 +97,8 @@ o	Incorporate time-based analysis in your dashboard, such as trends in account o
 **4.	Interactive Analysis of Loan Data **
 o	Create an interactive section for analyzing loan data, including loan amounts, interest rates, and credit scores.
 
+!!
+
 **5.	Visualization of Transaction and Account Data **
 o	Implement visualizations that display transaction and account data effectively, providing insights into customer behavior and bank operations.
 
