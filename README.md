@@ -1,107 +1,106 @@
-Problem statement:
+# Banking
 
-**Banking
+### **Case Study: Unlocking Financial Insights in Banking Data**
 
-Case Study: Unlocking Financial Insights in Banking Data**
+### **Background**
 
-**Background**
 As a data analyst at FinInsight Group, a consultancy specializing in banking analytics, you are equipped with two comprehensive datasets: 'Banking Transactions' and 'Customer Account Details'. The 'Banking Transactions' dataset records detailed transaction data, including types, amounts, dates, and branch information. The 'Customer Account Details' dataset provides insights into account holders, covering account types, balances, interest rates, credit scores, and loan amounts. Your expertise is crucial in a sector where financial data drives strategic decisions in customer relationship management, risk assessment, and product offerings.
 
-**Objective**
-Your mission is to utilize Tableau's robust capabilities to craft a compelling narrative from the provided datasets. This task will encompass thorough data preparation, intelligent data modeling, and the skillful application of calculated fields and Tableau functions for sophisticated analysis. The ultimate aim is to construct an interactive and intuitive dashboard in Tableau that showcases your key discoveries, offering concise, actionable insights into the optimization of hotel operations and performance.
+### **Objective**
 
-**Data Source:
+Your task is to employ Power BI to analyze these banking datasets, aiming to unravel the intricate patterns and behaviors within the data. This involves in-depth data cleaning, robust data modeling, and strategic use of DAX for complex analytics. Your goal is to create a comprehensive, interactive dashboard that not only illustrates transactional trends and customer profiles but also offers a holistic view of the banking ecosystem. This analysis should include understanding customer transaction behaviors, identifying relationships between account characteristics and financial health, and exploring factors influencing credit scores and loan management. Your insights will guide FinInsight Group in advising banking institutions on optimizing their services, enhancing customer satisfaction, and managing financial risks effectively.
 
-BankingDataset1.xlsx**
+### **Data Source:**
+
+[BankingDataset1.xlsx](https://prod-files-secure.s3.us-west-2.amazonaws.com/d1e1bc70-9ede-4c69-84fd-42c5605803a0/a5a65b8a-cbbd-40f7-90e8-dbf57cb41048/BankingDataset1.xlsx)
+
 The "BankingDataset1.xlsx" file contains the following columns:
-1.	TransactionID: A unique identifier for each transaction.
-2.	AccountNumber: The account number associated with the transaction. (Foreign Key)
-3.	TransactionType: The type of transaction (e.g., Transfer, Deposit, Withdrawal, Payment).
-4.	Amount: The amount of money involved in the transaction.
-5.	TransactionDate: The date when the transaction occurred.
-6.	BranchCode: The code of the bank branch where the transaction took place.
-7.	Currency: The currency in which the transaction was made.
-8.	TransactionTime: The time of day when the transaction occurred (in hours).
-9.	
-**BankingDataset2.xlsx**
+
+1. **TransactionID**: A unique identifier for each transaction. 
+2. **AccountNumber**: The account number associated with the transaction. (Foreign Key)
+3. **TransactionType**: The type of transaction (e.g., Transfer, Deposit, Withdrawal, Payment).
+4. **Amount**: The amount of money involved in the transaction.
+5. **TransactionDate**: The date when the transaction occurred.
+6. **BranchCode**: The code of the bank branch where the transaction took place.
+7. **Currency**: The currency in which the transaction was made.
+8. **TransactionTime**: The time of day when the transaction occurred (in hours).
+
+[BankingDataset2.xlsx](https://prod-files-secure.s3.us-west-2.amazonaws.com/d1e1bc70-9ede-4c69-84fd-42c5605803a0/c32057d2-f4bf-491f-aaaf-25b20f52eb8e/BankingDataset2.xlsx)
 
 The "BankingDataset2.xlsx" file contains the following columns:
-1.	AccountNumber: A unique identifier for each account, corresponding to 'AccountNumber' in "BankingDataset1.xlsx". (Primary Key)
-2.	AccountHolder: The name of the account holder.
-3.	AccountType: The type of account (e.g., Credit, Loan, Checking).
-4.	Balance: The current balance of the account.
-5.	InterestRate: The interest rate applicable to the account.
-6.	CreditScore: The credit score of the account holder.
-7.	OpeningDate: The date when the account was opened.
-8.	LoanAmount: The amount of loan associated with the account (if applicable).
-9.	AccountHolderDetails: Details about account holders - employment sector, years at current residence, and city of residence etc.
-10.	
-**Part 1:**
- Data Cleaning, Modeling, and Advanced Analysis in Tableau
-**1.	Data Preparation **
-   	
-o	Import both datasets into Tableau. Perform a preliminary examination of the data. Identify any data quality issues or inconsistencies.
-o	Clean and prepare the data if necessary (e.g., handling missing values, data type conversions).
 
-**2.	Calculated Fields:** Create a calculated field to find the 'Age of Account' in days from the 'OpeningDate' till the current date.
+1. **AccountNumber**: A unique identifier for each account, corresponding to 'AccountNumber' in "BankingDataset1.xlsx". (Primary Key)
+2. **AccountHolder**: The name of the account holder.
+3. **AccountType**: The type of account (e.g., Credit, Loan, Checking).
+4. **Balance**: The current balance of the account.
+5. **InterestRate**: The interest rate applicable to the account.
+6. **CreditScore**: The credit score of the account holder.
+7. **OpeningDate**: The date when the account was opened.
+8. **LoanAmount**: The amount of loan associated with the account (if applicable).
+9. **AccountHolderDetails:** Details about account holders - employment sector, years at current residence, and city of residence etc.
 
-**3.	Hierarchy Creation:** Create a hierarchy in BankingDataset1 for 'TransactionDate', 'TransactionTime'. How does this hierarchy enhance your analysis?
+### **Part 1: Data Cleaning, Modeling, and DAX in Power BI**
 
-**4.	Grouping Data:** Create a group in BankingDataset2 based on 'CreditScore' (e.g., low, medium, high). Define the ranges for these groups.
+1. **Data Importing and Initial Examination**
+    - Import both datasets into Power BI. Perform a preliminary examination of the data. Identify any data quality issues or inconsistencies.
+2. **Merging and Relating Datasets**
+    - Merge the datasets using a suitable column as a key. Ensure that the merge is accurate and retains all necessary information.
+3. **Cleaning: Handling Missing and Irrelevant Data**
+    - Identify and address missing data in both datasets. Address duplicate entries and irrelevant data points, ensuring data quality.
+4. **Data Type Conversion**
+    - Transform and normalize data where necessary for consistency across datasets.
+5. **Categorizing Transaction Types**
+    - Create a new column categorizing transactions into broader categories based on 'TransactionType'. What categories did you create?
+6. **Analysis of Account Balances**
+    - Calculate the average account balance for each account type. Which account type has the highest average balance?
+7. **Currency Exchange Rate Impact**
+    - Analyze the impact of currency exchange rates on transaction amounts. Convert all transactions to a standard currency for comparison.
+8. **Branch Activity Analysis**
+    - Investigate which branch (identified by 'BranchCode') has the highest number of transactions.
+9. **Interest Rate and Balance Correlation**
+    - Using DAX, analyze the correlation between interest rates and account balances. Does a higher interest rate correlate with higher balances?
+10. **Loan Amount and Credit Score Relation**
+    - Examine the relationship between loan amount and credit score. Do higher credit scores correlate with larger loan amounts?
+11. **Transaction Trends Over Time**
+    - Analyze transaction trends over time. Are there any noticeable patterns or seasonal fluctuations?
+12. **Customer Loyalty Analysis**
+    - Calculate the duration of each account's relationship with the bank (from 'OpeningDate' to the most recent transaction date). Who are the longest-standing customers?
+13. **High-Value Transaction Analysis**
+    - Identify high-value transactions and analyze their characteristics. What constitutes a high-value transaction in your analysis?
+14. **Analysis of Transaction Time Patterns**
+    - Investigate if there are patterns in the times of day when different types of transactions are made.
+15. **Credit Score Distribution**
+    - Analyze the distribution of credit scores among account holders. What insights can you gather?
+16. **Correlation Between Account Age and Balance**
+    - Explore if there's a correlation between the age of an account (time since opening) and its current balance.
+17. **Performance Rating of Branches**
+    - Create a measure to rate branches based on transaction volume and value.
+18. **Extracting Key Information**
+    - Create new columns in the dataset that extract the employment sector, years at current residence, and city of residence from the 'AccountHolderDetails' column. Each piece of information should be in its own separate column.
+19. **Advanced DAX: Risk Assessment Model**
+    - Using DAX, develop a risk assessment model based on transaction patterns, account balances, and credit scores.
+20. **Customer Demographics and Transaction Behavior**
+    - Analyze transaction behavior based on customer demographics inferred from account data.
+21. **Branch and Account Type Influence on Transactions**
+    - Investigate if certain branches or account types have a significant influence on the types and values of transactions.
+22. **Predictive Modeling for Account Growth**
+    - Use DAX to create a predictive model estimating future account growth based on historical transaction and balance data.
+23. **Data Modeling: Time Series Forecasting of Transactions**
+    - Perform time series forecasting of transaction volumes using historical data. What are the predicted transaction volumes for the next quarter?
+24. **Advanced Data Transformation: Identifying Unusual Transactions**
+    - Using Power BI's data transformation capabilities, identify any unusual transactions (e.g., unusually high amounts, rare transaction types).
 
-**5.	Discretize a Continuous Variable:** Convert 'Balance' from a continuous to a categorical variable (e.g., Low, Medium, High balances). Define the thresholds for these categories.
+### **Part 2: Dashboard Building**
 
-**6.	Splitting Data:** Split the 'AccountHolderDetails' into multiple columns. What insights can you extract from this newly formatted data?
-7.	**Time-Series Analysis:** Analyze the trend of transaction amounts over time. Does any particular month or quarter show higher transaction volumes?
-
-**8.	Correlation Analysis:** Is there a correlation between 'Balance' and 'CreditScore' in BankingDataset2? Visualize and interpret the results.
-
-**9.	Aggregate Functions: **Calculate the average transaction amount for each type of transaction. What does this tell you about customer behavior?
-
-**10.	Filtering Data:** Create filters to view transactions only for specific branches. Which branch has the highest number of transactions?
-
-11.	Parameter Control: Add a parameter control to switch between different account types in BankingDataset2. What insights does this provide?
-
-12.	Top N Analysis: Identify the top 10 customers with the highest balances. Display their names and account details.
-
-13.	Conditional Formatting: Apply conditional formatting to highlight accounts in BankingDataset2 that have a balance greater than a specified parameter value.
-
-14.	LOD Expressions: Use a Level of Detail expression to find the average balance per account type. How does this differ from a simple average?
-
-15.	Trend Lines: Add trend lines to your time-series analysis. What prediction can you make for future transaction volumes?
-
-16.	Set Analysis: Create a set of accounts in BankingDataset2 that have a loan amount greater than their balance. What proportion of accounts does this represent?
-
-17.	Custom Date Fields: Create a custom date field in BankingDataset1 that combines 'TransactionDate' and 'TransactionTime' into a single datetime field. Use this field to analyze transaction patterns throughout the day.
-
-18.	Advanced Data Calculations: Create a complex calculated field in BankingDataset2 that categorizes accounts into risk categories based on a combination of 'Balance', 'CreditScore', and 'LoanAmount'. Define the logic for categorization and analyze the distribution of accounts across these risk categories.
-
-19.	Predictive Analysis: Using a trend line in Tableau, predict future balances for accounts in BankingDataset2. Discuss the reliability of these predictions based on the available data.
-
-20.	Cluster Analysis: Utilize Tableau’s clustering feature to group transactions in BankingDataset1 based on amount, type, and time. Analyze the characteristics of each cluster and hypothesize what each might represent in terms of customer behavior.
-
-21.	Market Basket Analysis: Conduct a market basket analysis to find associations between different transaction types in BankingDataset1. For instance, discover if certain types of transactions frequently occur together, suggesting a pattern in customer behavior.
-(Note: Show Vizualizations wherever possible in Part 1)
-
-**Part 2: Dashboard Building**
-
-**1.	Comprehensive Banking Dashboard **
-o	Create a dashboard in Tableau showcasing key metrics such as transaction volumes, account balances, loan amounts, and credit scores. Include filters for account types, branches, and currencies.
-
-**2.	Dashboard Design and Functionality **
-o	Focus on the dashboard's design and functionality. Ensure it is user-friendly, visually appealing, and provides interactive elements.
-
-**3.	Time-Based Analysis in Dashboard **
-o	Incorporate time-based analysis in your dashboard, such as trends in account opening and transaction patterns over time.
-
-**4.	Interactive Analysis of Loan Data **
-o	Create an interactive section for analyzing loan data, including loan amounts, interest rates, and credit scores.
-
-!!
-
-**5.	Visualization of Transaction and Account Data **
-o	Implement visualizations that display transaction and account data effectively, providing insights into customer behavior and bank operations.
-
-**6.	Key Insights and Data Storytelling **
-o	Provide a section summarizing key insights or stories from the data. Highlight significant findings or trends that emerged from your analysis.
-
+1. **Comprehensive Banking Dashboard**
+    - Create a dashboard in Power BI showcasing key metrics such as transaction volumes, account balances, loan amounts, and credit scores. Include filters for account types, branches, and currencies.
+2. **Dashboard Design and Functionality**
+    - Focus on the dashboard's design and functionality. Ensure it is user-friendly, visually appealing, and provides interactive elements.
+3. **Time-Based Analysis in Dashboard**
+    - Incorporate time-based analysis in your dashboard, such as trends in account opening and transaction patterns over time.
+4. **Interactive Analysis of Loan Data**
+    - Create an interactive section for analyzing loan data, including loan amounts, interest rates, and credit scores.
+5. **Visualization of Transaction and Account Data**
+    - Implement visualizations that display transaction and account data effectively, providing insights into customer behavior and bank operations.
+6. **Key Insights and Data Storytelling**
+    - Provide a section summarizing key insights or stories from the data. Highlight significant findings or trends that emerged from your analysis.
